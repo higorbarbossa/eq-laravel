@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::resource('setor', 'SetorController')->only('index', 'show');
+
+Route::resource('funcionario', 'FuncionarioController');
+
+Route::resource('contato', 'ContatoController')->only('index', 'show', 'destroy');
