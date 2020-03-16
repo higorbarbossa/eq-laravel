@@ -11,7 +11,7 @@
         </div>
         <div class="col-md-6">
             <label for="cpf">CPF</label>
-            <input type="text" class="form-control" id="cpf"  name="cpf" placeholder="Seu cpf">
+            <input type="text" class="form-control" id="cpf"  name="cpf" placeholder="Seu cpf" maxlength="11">
         </div>
     </div>
     <div class="row form-group">
@@ -27,7 +27,7 @@
 
         <div class=" col-md-6">
             <label for="ctps">CTPS</label>
-            <input type="text" class="form-control" id="ctps" name="ctps" placeholder="Sua carteira de trabalho">
+            <input type="text" class="form-control" id="ctps" name="ctps" placeholder="Sua carteira de trabalho" maxlength="15">
         </div>
     </div>
 
@@ -71,7 +71,7 @@
             <i class="fas fa-trash-alt">delete</i>
         </button>
       </form>
-      
+
       </td>
     </tr>
     @endforeach
