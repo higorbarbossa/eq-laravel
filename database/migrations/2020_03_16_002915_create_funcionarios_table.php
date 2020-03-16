@@ -18,6 +18,8 @@ class CreateFuncionariosTable extends Migration
             $table->string('nome', 100);
             $table->string('cpf', 11);
             $table->string('ctps', 20);
+            $table->string('telefone', 15);
+            $table->string('celular', 15);
             $table->unsignedBigInteger('setor_id');
             $table->timestamps();
         });

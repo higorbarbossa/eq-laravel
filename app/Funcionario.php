@@ -15,6 +15,8 @@ class Funcionario extends Model
         'nome',
         'cpf',
         'ctps',
+        'telefone',
+        'celular',
         'setor_id',
     ];
 
@@ -34,8 +36,4 @@ class Funcionario extends Model
         return $this->belongsTo(\App\Setor::class, 'setor_id', 'id');
     }
 
-    public function contatos()
-    {
-        return $this->hasMany(\App\Contato::class);
-    }
 }

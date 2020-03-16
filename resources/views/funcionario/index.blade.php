@@ -1,7 +1,8 @@
-@extends('welcome')
+@extends('app')
 
 @section('content')
-
+<h2>Funcionario</h2>
+<hr>
 <form method="POST" action="/funcionario">
 @csrf
     <div class="row form-group">
@@ -10,8 +11,8 @@
             <input type="text" class="form-control" id="nome"  name="nome"  placeholder="Seu nome">
         </div>
         <div class="col-md-6">
-            <label for="cpf">CPF</label>
-            <input type="text" class="form-control" id="cpf"  name="cpf" placeholder="Seu cpf" maxlength="11">
+            <label for="telefone">Telefone</label>
+            <input type="text" class="form-control" id="telefone"  name="telefone" placeholder="Telefone" maxlength="15">
         </div>
     </div>
     <div class="row form-group">
@@ -26,8 +27,18 @@
         </div>
 
         <div class=" col-md-6">
-            <label for="ctps">CTPS</label>
-            <input type="text" class="form-control" id="ctps" name="ctps" placeholder="Sua carteira de trabalho" maxlength="15">
+            <label for="celular">Celular</label>
+            <input type="text" class="form-control" id="celular" name="celular" placeholder="Celular" maxlength="15">
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-md-6">
+            <label for="ctps">Carteira de trabalho</label>
+            <input type="text" class="form-control" id="ctps"  name="ctps"  placeholder="Sua Carteira de Trabalho" maxlength="15">
+        </div>
+        <div class="col-md-6">
+            <label for="cpf">CPF</label>
+            <input type="text" class="form-control" id="cpf"  name="cpf" placeholder="Seu cpf" maxlength="11">
         </div>
     </div>
 
@@ -41,7 +52,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">id</th>
       <th scope="col">Nome</th>
       <th scope="col">CPF</th>
       <th scope="col">CTPS</th>

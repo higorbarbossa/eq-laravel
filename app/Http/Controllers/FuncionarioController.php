@@ -30,6 +30,8 @@ class FuncionarioController extends Controller
         $funcionario->nome      = $request->nome ;
         $funcionario->cpf       = $request->cpf  ;
         $funcionario->ctps      = $request->ctps ;
+        $funcionario->telefone  = $request->telefone ;
+        $funcionario->celular   = $request->celular ;
         $funcionario->setor_id  = $request->setor;
 
         $funcionario->save();
@@ -42,20 +44,24 @@ class FuncionarioController extends Controller
      * @param \App\Funcionario $funcionario
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, Funcionario $funcionario)
+    public function edit(Request $request, $id)
     {
-        $funcionario = Funcionario::find($funcionario);
+        $funcionario = Funcionario::find($id);
+        //return ($funcionario);
 
         return view('funcionario.edit',compact('funcionario'));
     }
 
     public function update(Request $request, $id)
     {
+
         $funcionario = Funcionario::find($id);
 
         $funcionario->nome      = $request->nome ;
         $funcionario->cpf       = $request->cpf  ;
         $funcionario->ctps      = $request->ctps ;
+        $funcionario->telefone  = $request->telefone ;
+        $funcionario->celular   = $request->celular ;
         $funcionario->setor_id  = $request->setor;
 
         $funcionario->save();
