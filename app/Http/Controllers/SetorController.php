@@ -7,22 +7,38 @@ use Illuminate\Http\Request;
 
 class SetorController extends Controller
 {
-    /**
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function index(Request $request)
+    public function index()
     {
-        $setors = Setor::all();
+        $setores = Setor::all();
+        return view('setor.index', compact('setores'));
     }
 
-    /**
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Setor $setor
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Request $request, Setor $setor)
+    public function store(Request $request)
+    {
+        $setor = new Setor();
+        $setor->descricao = $request->descricao ;
+        $setor->save();
+        return redirect()->route('setor.index');
+    }
+
+    public function edit(Request $request, $id)
     {
         $setor = Setor::find($id);
+        return view('setor.edit',compact('setor'));
+    }
+
+    public function update(Request $request, $id)
+    {
+
+        $setor = Setor::find($id);
+        $setor->descricao = $request->descricao ;
+        $setor->save();
+        return redirect()->route('setor.index');
+    }
+
+    public function destroy(Request $request, Setor $setor)
+    {
+        $setor->delete();
+        return redirect()->route('setor.index');
     }
 }

@@ -15,15 +15,21 @@
         <div class="sidebar-sticky">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active" href="#">
+              <a class="nav-link active" href="{{route('welcome')}}">
                 <span data-feather="home"></span>
-                Dashboard <span class="sr-only">(current)</span>
+                Home <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="{{route('funcionario.index')}}">
                 <span data-feather="file"></span>
-                Orders
+                Funcionarios
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('setor.index')}}">
+                <span data-feather="file"></span>
+                Setor
               </a>
             </li>
           </ul>

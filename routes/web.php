@@ -12,11 +12,13 @@
 */
 
 Route::get('/', function () {
-    return redirect('funcionario');
-});
+    return view('welcome');
+})->name('welcome');
 
 
 Route::resource('funcionario', 'FuncionarioController')->except('create', 'show');
 
-//Route::resource('setor', 'SetorController')->only('index', 'show');
+Route::resource('setor', 'SetorController')->except('create', 'show');
+
+
 //Route::resource('contato', 'ContatoController')->only('index', 'show', 'destroy');
