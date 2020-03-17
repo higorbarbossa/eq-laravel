@@ -4,12 +4,12 @@ clonar repositório
 instalar dependencias
 >composer install
 
-preparar aquivo de configuração de ambiente
+preparar aquivo de configuração de ambiente e ajustar dados para conexão com o banco de dados
 >cp .env.example .env
 
 >php artisan key:generate
 
-crie um banco de dados com o nome "testeeqweb" e depois rode o comando abaixo para criação de tabelas e preencher a tabela de Setor
+crie um banco de dados com o nome "testeeqweb", caso não tenha alterado no arquivo .env, e depois rode o comando abaixo para criação de tabelas e preencher a tabela de Setor
 >php artisan migrate --seed
 
 para rodar a aplicação execute o comando:
