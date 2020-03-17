@@ -56,6 +56,7 @@
       <th scope="col">Nome</th>
       <th scope="col">CPF</th>
       <th scope="col">CTPS</th>
+      <th scope="col">Contatos</th>
       <th scope="col">Setor</th>
       <th scope="col"></th>
       <th scope="col"></th>
@@ -68,10 +69,18 @@
       <td>{{ $f->nome }}</td>
       <td>{{ $f->cpf }}</td>
       <td>{{ $f->ctps }}</td>
+      <td> 
+        {{ $f->telefone }} 
+        <br>
+        {{ $f->celular }}
+      </td>
       <td>{{ $f->setor->descricao }}</td>
-      <td> <a href="funcionario/{{$f->id}}/edit"><button class="btn btn-outline-info btn-sm">
-            <i class="fas fa-trash-alt">edit</i>
-        </button>
+
+      <td> 
+        <a href="funcionario/{{$f->id}}/edit">
+            <button class="btn btn-outline-info btn-sm">
+                <i class="fas fa-trash-alt">edit</i>
+            </button>
         </a>
       </td>
       <td>
