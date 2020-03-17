@@ -79,23 +79,43 @@
       <td> 
         <a href="funcionario/{{$f->id}}/edit">
             <button class="btn btn-outline-info btn-sm">
-                <i class="fas fa-trash-alt">edit</i>
+                <i class="fas fa-trash-alt">editar</i>
             </button>
         </a>
       </td>
       <td>
-      <form action="funcionario/{{$f->id}}" method="post">
-      @method('DELETE')
-      @csrf
-        <button class="btn btn-outline-danger btn-sm">
-            <i class="fas fa-trash-alt">delete</i>
-        </button>
-      </form>
 
+            <button class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#modalExemplo" onclick="getElementById('deletar').action='funcionario/{{$f->id}}'">
+                <i class="fas fa-trash-alt">apagar</i>
+            </button>
       </td>
     </tr>
     @endforeach
   </tbody>
 </table>
+
+<!-- Modal -->
+<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Desejar apagar o registro?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <form id="deletar" action="" method="post">
+      @method('DELETE')
+      @csrf
+        <button class="btn btn-outline-danger btn-sm">
+            <i class="fas fa-trash-alt">SIM</i>
+        </button>
+      </form>
+        <button type="button" class="btn btn-outline-secondary btn-sm" data-dismiss="modal">NÃO</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 @endsection
